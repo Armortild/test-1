@@ -1,0 +1,287 @@
+$font-main: Oswald;
+$weight: 100;
+$size-main: 10px;
+$color-btn-start: #44558B;
+$color-btn-end: #6477DE;
+$color: white;
+$text-size: 10px;
+
+
+body {
+  background-image: url(../img/IMG_20190123_160001_820.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: $size-main $size-main*2 $size-main*5 $size-main*2;
+
+
+}
+
+.grid-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-auto-rows: 200px;
+  //outline: 1px solid red;
+
+  .header__logo {
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    .logo {
+      .logo__link {
+        //outline: 1px solid red;
+        font-family: $font-main;
+        font-size: $text-size*2.5;
+        font-weight: $weight*7;
+        text-decoration: none;
+        color: $color-btn-start;
+        text-transform: uppercase;
+
+        &::before {
+          content: "";
+          vertical-align: center;
+          display: inline-block;
+          width: $text-size*2.5;
+          height: $text-size*2.5;
+          margin-right: 20px;
+          background-image: url(../img/facebook.png);
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+
+  }
+
+  .header__menu {
+    .menu {
+      display: grid;
+      //grid-template-columns: 15fr 5fr 8fr 7fr 3fr 7fr 11fr;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      grid-gap: 20px;
+      list-style-type: none;
+
+      .menu__item {
+        //outline: 1px solid red;
+        text-align: center;
+
+        &:nth-child(7) {
+          border: 2px solid white;
+          border-radius: 20px;
+        }
+
+        &:hover {
+          transform: scale(1.1)
+        }
+
+        .menu__link {
+          font-family: $font-main;
+          font-size: $text-size*2;
+          font-weight: $weight*7;
+          text-decoration: none;
+          color: $color;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+.grid-block {
+  display: grid;
+  grid-template-columns: minmax(250px, 500px) 2fr;
+  justify-items: center;
+  //outline: 1px solid green;
+
+  .block__left {
+    font-family: $font-main;
+    color: $color;
+    //outline: 1px solid green;
+
+
+    h1 {
+      font-size: $text-size*5;
+      font-weight: $weight*8;
+      text-decoration: none;
+      letter-spacing: 3px;
+
+      .h1 {
+        color: $color-btn-end;
+      }
+
+      .of {
+        border-bottom: 5px solid yellow;
+      }
+    }
+
+    p {
+      color: #797C8D;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-gap: 20px;
+      //outline: 1px solid green;
+
+      .buttons__link {
+        text-decoration: none;
+
+      }
+
+      .buttons__btn {
+        background: linear-gradient(to right, $color-btn-start, $color-btn-end);
+        color: $color;
+        border: none;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: $size-main $size-main;
+        font-size: $size-main*1.5;
+        letter-spacing: 1px;
+        border-radius: $size-main*5;
+        text-align: center;
+        cursor: pointer;
+        font-family: $font-main;
+        margin: $size-main;
+        opacity: 0.95;
+        transition: all 0.6s ease;
+        box-shadow: 3px 3px 7px darken($color-btn-start, 3%);
+
+        &:hover {
+          background-color: darken($color-btn-start, 5%);
+          box-shadow: 3px 3px 7px darken($color-btn-start, 20%);
+          color: coral;
+
+        }
+      }
+    }
+  }
+
+  .block__right {
+    font-family: $font-main;
+    color: $color;
+    //outline: 1px solid red;
+    width: 480px;
+    height: 380px;
+    background-color: #1B1F38;
+    text-align: center;
+
+    h2 {
+      font-size: $text-size*5;
+      font-weight: $weight*8;
+      text-decoration: none;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+
+      .of {
+        border-bottom: 5px solid yellow;
+      }
+    }
+
+    .numbers {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      align-items: center;
+      //outline: 1px solid red;
+
+      &__table {
+        //outline: 1px solid red;
+
+        font-size: $size-main*5;
+
+        .table {
+          font-size: $size-main*1.3;
+          color: $color-btn-end;
+          margin-top: -10px;
+        }
+      }
+    }
+
+    .text {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      //outline: 1px solid yellow;
+      &__left {
+        border-right: 5px solid yellow;
+
+        span {
+          color: $color-btn-end;
+        }
+      }
+
+      &__right {
+      }
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: 1fr;
+      //outline: 1px solid green;
+      justify-items: center;
+
+      .buttons__link {
+        text-decoration: none;
+      }
+
+      .buttons__btn {
+
+        background: linear-gradient(to right, $color-btn-start, $color-btn-end);
+        width: 150px;
+        color: $color;
+        border: none;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: $size-main $size-main;
+        font-size: $size-main*1.5;
+        letter-spacing: 1px;
+        border-radius: $size-main*5;
+        text-align: center;
+        cursor: pointer;
+        font-family: $font-main;
+        margin: $size-main;
+        opacity: 0.95;
+        transition: all 0.6s ease;
+        box-shadow: 3px 3px 7px darken($color-btn-start, 3%);
+
+        &:hover {
+          background-color: darken($color-btn-start, 5%);
+          box-shadow: 3px 3px 7px darken($color-btn-start,
+                  20%);
+          color: coral;
+
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .grid-header {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  .grid-block{
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    .block__left{
+      text-align: center;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .grid-header {
+    grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+
+  }
+  .grid-block{
+    grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+    .buttons{
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr) );
+    }
+  }
+}
+
+
+
+
+
